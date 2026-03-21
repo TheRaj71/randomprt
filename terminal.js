@@ -71,7 +71,10 @@ class Terminal {
 
   focusInput() {
     setTimeout(() => {
-      document.getElementById('terminal-input')?.focus();
+      const input = document.getElementById('terminal-input');
+      if (input) {
+        input.focus({ preventScroll: true });
+      }
     }, 100);
   }
 

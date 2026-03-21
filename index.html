@@ -1523,7 +1523,17 @@
   </div>
   
   <script>
-    // Hide loader after 2.8 seconds
+    // Force scroll to top immediately
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    
+    // Disable browser scroll restoration
+    if (history.scrollRestoration) {
+      history.scrollRestoration = 'manual';
+    }
+    
+    // Hide loader after 3.4 seconds
     setTimeout(function() {
       var loader = document.getElementById('loading-screen');
       if (loader) {
